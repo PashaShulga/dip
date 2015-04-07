@@ -1,0 +1,126 @@
+{% load staticfiles %}
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Облік абонентів мобільного зв'язку</title>
+    <link rel="stylesheet" href="{% static 'static/css/foundation.css' %}"/>
+    <link rel="stylesheet" href="{% static 'static/css/normalize.css' %}"/>
+    <link rel="stylesheet" href="{% static 'static/css/login.css' %}"/>
+    <link rel="stylesheet" href="{% static 'static/css/welcome.css' %}"/>
+    <link rel="stylesheet" href="{% static 'static/css/footer.css' %}"/>
+    <script src="{% static 'static/js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'static/js/foundation/foundation.js' %}"></script>
+    <script src="{% static 'static/js/foundation/foundation.topbar.js' %}"></script>
+</head>
+<header>
+
+    <div class="row">
+        <div class="fixed">
+            <nav class="top-bar" data-topbar role="navigation" data-options="is_hover: false">
+                <ul class="title-area">
+                    <li class="name">
+                        <h1><a href="/">Вперде</a></h1>
+                    </li>
+                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                </ul>
+
+                <section class="top-bar-section">
+                    <!-- Right Nav Section -->
+                    <ul class="right">
+                        {% if username %}
+                            <li><a href="/auth/logout/">Sign out ({{ username }})</a></li>
+                        {% else %}
+                            <li><a href="/auth/login/">Sign in</a></li>
+                        {% endif %}
+                        <li>
+                            <a href="/auth/register/">Sign up</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="has-form">
+                            <div class="row collapse">
+                                <div class="large-8 small-9 columns">
+                                    <input type="text" placeholder="Find Stuff">
+                                </div>
+                                <div class="large-4 small-3 columns">
+                                    <a href="#" class="alert button expand">Search</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Left Nav Section -->
+                    <ul class="left">
+                        <li>
+                            <a href="/clients/all/">Clients</a>
+                        </li>
+                        <li>
+                            <a href="/operators/all/">Operators</a>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+
+        </div>
+    </div>
+</header>
+
+
+<body>
+<div style="height: 75%;">
+<br/>
+{% block clients %}{% endblock %}
+{% block operators %}{% endblock %}
+{% block client %}{% endblock %}
+{% block enter %}{% endblock %}
+{% block login %}{% endblock %}
+{% block registration %}{% endblock %}
+{% block operator %}{% endblock %}
+</div>
+
+<br/>
+
+<!-- For Foundation Icons, put this in your head -->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="row full-width">
+    <div class="small-12 medium-3 large-4 columns">
+      <i class="fi-laptop"></i>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum maiores alias ea sunt facilis impedit fuga dignissimos illo quaerat iure in nobis id quos, eaque nostrum! Unde, voluptates suscipit repudiandae!</p>
+    </div>
+    <div class="small-12 medium-3 large-4 columns">
+      <i class="fi-html5"></i>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit impedit consequuntur at! Amet sed itaque nostrum, distinctio eveniet odio, id ipsam fuga quam minima cumque nobis veniam voluptates deserunt!</p>
+    </div>
+    <div class="small-6 medium-3 large-2 columns">
+      <h4>Work With Me</h4>
+      <ul class="footer-links">
+        <li><a href="#">What I Do</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">FAQ's</a></li>
+      <ul>
+    </div>
+    <div class="small-6 medium-3 large-2 columns">
+      <h4>Follow Me</h4>
+      <ul class="footer-links">
+        <li><a href="https://github.com/PashaShulga">GitHub</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100001711124687">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Dribbble</a></li>
+      <ul>
+    </div>
+  </div>
+</footer>
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>

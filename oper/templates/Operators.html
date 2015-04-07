@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block operators %}
+<div class="row">
+    <div align="center" class="large-12 columns">
+        <table>
+            <thead>
+                    <tr>
+                      <th width="100">Operator name</th>
+                      <th width="200">Description tariff</th>
+                      <th width="200">Date of actions tariff</th>
+                      <th width="100">Sum of tariff</th>
+                    </tr>
+            </thead>
+            <tbody>
+            {% for operator in Operators %}
+                <tr>
+                    <td><a href="/operators/get/{{ operator.id }}">{{ operator.operator_name }}</a></td>
+                    <td>{{ operator.operator_tariff_desc }}</td>
+                    <td>{{ operator.operator_tariff_date }}</td>
+                    <td>{{ operator.operator_tariff_sum }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block clients %}
+<div class="row">
+    <div align="center" class="large-12 columns">
+        <table>
+            <thead>
+                    <tr>
+                      <th>FIO</th>
+                      <th width="200">Number telephone</th>
+                      <th width="200">Tariff plan</th>
+                      <th width="200">Operator</th>
+                      <th width="20">Sum</th>
+                    </tr>
+            </thead>
+            <tbody>
+            {% for client in Clients %}
+                <tr>
+                    <td><a href="/clients/get/{{ client.id }}">{{ client.client_name }}</a></td>
+                    <td>{{ client.client_telephone }}</td>
+                    <td>{{ client.client_tariff }}</td>
+                    <td>{{ client.split.operator_name }}</td>
+                    <td>{{ client.split.operator_tariff_sum }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

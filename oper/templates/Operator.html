@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block operator %}
+    <div class="row">
+        <div class="large-12 columns">
+            <ul>
+                <li>{{ operator.operator_name }}</li>
+                <li>{{ operator.operator_tariff_desc }}</li>
+                <li>{{ operator.operator_tariff_sum }}</li>
+                <li>{{ operator.operator_tariff_date }}</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

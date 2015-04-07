@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block client %}
+    <div class="row">
+        <div class="large-12 columns">
+            <ul>
+                <li>{{ client.client_name }}</li>
+                <li>{{ client.client_telephone }}</li>
+                <li>{{ client.split.operator_name }}</li>
+                <li>{{ client.client_tariff }}</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

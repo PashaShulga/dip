@@ -1,0 +1,2 @@
+# dip
+Django project

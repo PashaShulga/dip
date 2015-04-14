@@ -27,6 +27,3 @@ def logout(request):
 
 def registration(request):
     return redirect('/')
-
-
-

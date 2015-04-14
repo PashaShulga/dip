@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.shortcuts import render_to_response
 from oper.models import Client, Operators
 from django.contrib import auth
@@ -10,11 +9,13 @@ def enter(request):
 
 
 def operators(request):
-    return render_to_response('Operators.html', {'Operators': Operators.objects.all(), 'username': auth.get_user(request).username})
+    return render_to_response('Operators.html',
+                              {'Operators': Operators.objects.all(), 'username': auth.get_user(request).username})
 
 
 def clients(request):
-    return render_to_response('Clients.html', {'Clients': Client.objects.all(), 'username': auth.get_user(request).username})
+    return render_to_response('Clients.html',
+                              {'Clients': Client.objects.all(), 'username': auth.get_user(request).username})
 
 
 def client(request, client_id=1):
@@ -33,3 +34,5 @@ def operator(request, operator_id=1):
     args['client'] = Client.objects.filter(id=operator_id)
     args['username'] = auth.get_user(request).username
     return render_to_response('Operator.html', args)
+
+

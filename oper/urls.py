@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^operators/all/$', 'oper.views.operators'),
     url(r'^clients/get/(?P<client_id>\d+)/$', 'oper.views.client'),
     url(r'^operators/get/(?P<operator_id>\d+)/$', 'oper.views.operator'),
+    url(r'^tariff/$', 'oper.views.tariff'),
     url(r'^$', 'oper.views.enter'),
 )
 

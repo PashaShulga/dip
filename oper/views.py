@@ -1,7 +1,8 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, HttpResponse
 from oper.models import Client, Operators
 from django.contrib import auth
 from django.core.context_processors import csrf
+from oper.backend.mts import run
 
 
 def enter(request):
@@ -36,3 +37,5 @@ def operator(request, operator_id=1):
     return render_to_response('Operator.html', args)
 
 
+def tariff(request):
+    return HttpResponse("<h1>{0}</h1>".format(run()))

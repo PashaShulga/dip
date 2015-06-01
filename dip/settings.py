@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'dip.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mobileapp',
+        'NAME': 'mobapp',
         'USER': 'postgres',
         'PASSWORD': 'Reload_777',
         'HOST': 'localhost',
@@ -77,7 +77,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC+2'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
